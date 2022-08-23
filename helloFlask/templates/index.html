@@ -1,0 +1,13 @@
+{# templates/index.html #}
+
+<!DOCTYPE html>
+<html>
+	<body>
+		<header>
+    			{% include "_navigation.html" %}
+  		</header>
+		{% block content %}
+		<h1>Hello {{name}}</h1>
+		{% endblock content %}
+	</body>
+</html>
