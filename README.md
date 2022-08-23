@@ -2,16 +2,19 @@
 Web-based application
 
 ## Installation and usage of pyenv
-* ```sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev
+* Install dependencies
+```sudo apt-get update; sudo apt-get install make build-essential libssl-dev zlib1g-dev libbz2-dev
 sudo apt-get install libreadline-dev libsqlite3-dev wget curl llvm libncursesw5-dev 
-sudo apt-get install xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev ``
+sudo apt-get install xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev ```
 
 * ```curl https://pyenv.run | bash```
 
-* ```
+* edit bashrc
+```
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc 
 echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc 
-echo 'eval "$(pyenv init -)"' >> ~/.bashrc```
+echo 'eval "$(pyenv init -)"' >> ~/.bashrc
+```
 
 * Uncomment conda activation lines in ```~/.bashrc```
 
