@@ -3,6 +3,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField 
 from werkzeug.utils import secure_filename
 import os
+from vgg16_func import predict_pic
 
 app = Flask(__name__, static_url_path='/static') # instantiation application
 app.config["SECRET_KEY"] = str(os.urandom(3).hex()) # for forms
@@ -62,7 +63,8 @@ def upload_file():
     if request.method == 'POST':
         f = request.files['file']
         f.save(os.path.join(app.config['UPLOAD_PATH'], secure_filename(f.filename)))
-        return 'file uploaded successfully'
+        return predict_pic(os.path.join(app.config['UPLOAD_PATH'], secure_filename(f.filename)))
+        # return 'file uploaded successfully'
 
 if __name__ == '__main__':
     app.run(debug=True) # démarrage de l’application

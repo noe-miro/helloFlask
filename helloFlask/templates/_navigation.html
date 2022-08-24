@@ -2,7 +2,7 @@
 
 <nav>
 {% for menu_item in ["home", "cat", "more_cats", "AI", "create", "upload_form"] %}
-  <a href="{{ url_for(menu_item) }}">{{ menu_item }}</a>
+  <a href="{{ url_for(menu_item) }}" style="color: white">{{ menu_item }}</a>
 {% endfor %}
 </nav>
 
