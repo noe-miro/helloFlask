@@ -1,7 +1,7 @@
 {# templates/_navigation.html #}
 
 <nav>
-{% for menu_item in ["home", "cat", "more_cats", "AI"] %}
+{% for menu_item in ["home", "cat", "more_cats", "AI", "create", "upload_form"] %}
   <a href="{{ url_for(menu_item) }}">{{ menu_item }}</a>
 {% endfor %}
 </nav>
