@@ -1,0 +1,9 @@
+{% extends 'index.html' %}
+
+{% block content %}
+ <body>
+    <h1>{% block title %} {{ prediction }} {% endblock %}</h1>
+    {{uploaded_file}}	
+    <img src="{{ url_for('static', filename=uploaded_file) }}" width="500" height="auto"/>
+  </body>
+{% endblock %}
