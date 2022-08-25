@@ -37,3 +37,12 @@ echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 cd my/path/
 pyenv local 3.10.6
 ```
+
+
+## Usage with docker:
+```
+sudo docker build -t myhelloflask .
+sudo docker run -p 8000:5000 myhelloflask
+```
+To access the website in the local network, go to Settings> Network > IPv4 and type in the browser the IP followed by :8000.
+

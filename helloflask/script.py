@@ -8,10 +8,14 @@ from vgg16_func import predict_pic
 app = Flask(__name__, static_url_path='/static') # instantiation application
 app.config["SECRET_KEY"] = str(os.urandom(3).hex()) # for forms
 
-UPLOAD_FOLDER = './helloFlask/static/uploads'
+cwd = os.getcwd()
+UPLOAD_FOLDER = cwd + '/helloflask/static/uploads'
+
+print('This is the upload folder: {}'.format(UPLOAD_FOLDER))
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 
 app.config['UPLOAD_PATH'] = UPLOAD_FOLDER
+print('app.config : {}'.format(app.config['UPLOAD_PATH']))
 app.config['MAX_CONTENT_PATH'] = 6291456 # max upload size in bytes
 
 def allowed_file(filename):
@@ -58,20 +62,23 @@ def text_form():
 def DeepCat():
    return render_template('test_upload.html')
 
-@app.route('/uploader/', methods=('GET', 'POST'))
+@app.route('/uploader', methods=('GET', 'POST'))
 def upload_file():
     if request.method == 'POST':
         f = request.files['file']
         filename = secure_filename(f.filename)
+        print('Filename: {}'.format(filename))
         if filename != '':
             if not allowed_file(filename):
                 abort(400)
         upload_name = os.path.join(app.config['UPLOAD_PATH'], secure_filename(f.filename))
         f.save(upload_name)
         prediction = predict_pic(upload_name)
-        return render_template('uploader.html', prediction=prediction, uploaded_file="uploads/"+secure_filename(f.filename))
+        # return render_template('uploader.html', prediction=prediction, uploaded_file='')
+        return render_template('uploader.html', prediction=prediction, uploaded_file='uploads/' + secure_filename(f.filename))
         # return predict_pic(os.path.join(app.config['UPLOAD_PATH'], secure_filename(f.filename)))
         # return 'file uploaded successfully'
 
 if __name__ == '__main__':
-    app.run(debug=True) # démarrage de l’application
+    app.run(debug=True, host='0.0.0.0') # démarrage de l’application
+    # app.run(debug=True, host='172.17.0.1')
