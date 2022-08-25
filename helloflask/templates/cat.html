@@ -1,0 +1,38 @@
+{# templates/cat.html #}
+
+<!DOCTYPE html>
+{% extends "index.html" %}
+
+
+{% block content %}
+<body>
+<h1>Cats under construction</h1>
+
+<h2> What are you still doing here?</h2>
+
+<img src="{{url_for('static', filename='IMG_20220814_230453.png')}}" />
+
+
+
+<h2> 
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
+Do NOT scroll down
+</h2>
+
+
+<h2> 
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
+I said DON'T!
+</h2>
+
+
+<h2> 
+<br /><br /><br /><br /><br /><br /><br /><br /><br />
+Ok you win. Here is a cute cat for you
+</h2>
+<img src="{{url_for('static', filename='IMG_20220820_150800.png')}}" />
+
+
+</body>
+{% endblock content %}
+

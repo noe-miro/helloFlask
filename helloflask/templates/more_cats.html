@@ -1,0 +1,60 @@
+{# templates/more_cats.html #}
+
+<!DOCTYPE html>
+{% extends "index.html" %}
+
+
+{% block content %}
+<body>
+
+<h2> Parked cat</h2>
+
+<img src="{{url_for('static', filename='/parked_cat/IMG_20210921_193821.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/parked_cat/IMG_20201012_230420.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/parked_cat/IMG_20220416_185344.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/parked_cat/IMG_20220714_215520.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/parked_cat/IMG_20211025_154827.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/parked_cat/IMG_20220708_233418.jpg')}}" width="300" height="auto"/>
+
+<h2> 
+<br /><br /><br />
+Playing cat
+</h2>
+
+
+<img src="{{url_for('static', filename='/playing_cat/IMG_20191122_224155.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/playing_cat/IMG_20200516_144632.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/playing_cat/IMG_20210710_112823.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/playing_cat/IMG_20200228_224015.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/playing_cat/IMG_20200519_234135.jpg')}}" width="300" height="auto"/>
+
+
+<h2> 
+<br /><br /><br />
+Cat goes on drugs
+</h2>
+
+<img src="{{url_for('static', filename='/cat_on_drugs/IMG_20200523_173616.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/cat_on_drugs/IMG_20210318_154106.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/cat_on_drugs/IMG_20201220_220543.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/cat_on_drugs/IMG_20201220_220517.jpg')}}" width="300" height="auto"/>
+
+<img src="{{url_for('static', filename='/cat_on_drugs/IMG_20210224_134049.jpg')}}" width="300" height="auto"/>
+
+
+
+</body>
+{% endblock content %}
+

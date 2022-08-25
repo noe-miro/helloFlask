@@ -1,0 +1,37 @@
+{# templates/index.html #}
+
+<!DOCTYPE html>
+<html>
+	<head>
+	        <style>
+			.alert {
+			    padding: 20px;
+			    margin: 5px;
+			    color: #970020;
+			    background-color: #ffd5de;
+			}
+
+    </style>
+	</head>
+	<body style="color: white; background-color:#184689;">
+		<header>
+    			{% include "_navigation.html" %}
+  		</header>
+		{% block content %}
+		<h1>Hello {{name}}, welcome to cats</h1>
+		{% endblock content %}
+		
+		<footer>
+		
+		<img src="{{url_for('static', filename='/banner/nyan-cat_banner.gif')}}" />
+		
+		</footer>
+		
+		<div class="content">
+        	{% for message in get_flashed_messages() %}
+            		<div class="alert">{{ message }}</div>
+        	{% endfor %}
+        	{% block message %} {% endblock %}
+    		</div>
+	</body>
+</html>

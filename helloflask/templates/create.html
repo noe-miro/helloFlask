@@ -1,0 +1,23 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <h1>{% block title %} Cat or dog? Send your pic {% endblock %}</h1>
+    <form method="post">
+        <label for="title">Write here 'cat' or 'dog' </label>
+        <br>
+        <input type="text" name="title"
+               placeholder="Message title"
+               value="{{ request.form['title'] }}"></input>
+        <br>
+
+        <label for="content">Send us a message. We will not care about it anyway.</label>
+        <br>
+        <textarea name="content"
+                  placeholder="Message content"
+                  rows="15"
+                  cols="60"
+                  >{{ request.form['content'] }}</textarea>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
+{% endblock %}
